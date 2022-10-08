@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>𝕿𝖍𝖊@𝕻𝖍𝖆𝖓𝖙𝖔𝖒</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/all.min.css" />
+      <link rel="stylesheet" href="css/fontawesome.min.css" />
+</head>
+
+<body>
+
+
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-flex">
+                        <div id="hero" class="hero column-child terminal shadow">
+                            <div class="terminal-bar dark-mode">
+                                <div class="icon-btn close"></div>
+                                <div class="icon-btn min"></div>
+                                <div class="icon-btn max"></div>
+                                <div class="terminal-bar-text is-hidden-mobile dark-mode-text">𝕿𝖍𝖊@𝕻𝖍𝖆𝖓𝖙𝖔𝖒:~$</div>
+                                <div class="terminal-bar-text-2  dark-mode-text">
+                                    <a onclick="showTerminal()">
+                                        <i style="color: white;" class="fa-solid fa-xmark">&nbsp;</i>
+                                    </a>
+                                </div>
+                                                                
+
+                            </div>
+                            <div class="terminal-window primary-bg" onclick="document.getElementById('dummyKeyboard').focus();">
+                                <div class="terminal-output" id="terminalOutput">
+                                    <div class="terminal-line">
+                                        <span class="help-msg">Welcome to <span class="code1">𝕿𝖍𝖊 𝕻𝖍𝖆𝖓𝖙𝖔𝖒 ✘</span>'s toolBox — Type <span class="code">help</span> for a list of supported commands.</span>
+                                    </div>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="code1">>_</span><span class="success"> $</span><span class="code1">root</span><span class="directory">@𝕻𝖍𝖆𝖓𝖙𝖔𝖒:~$ </span><span class="user-input" id="userInput"></span>
+                                    <input type="text" id="dummyKeyboard" class="dummy-keyboard">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src='https://use.fontawesome.com/releases/v5.15.3/js/all.js'></script>
+    <script src="./script.js"></script>
+
+    <script>
+        /*function check (e)
+          {
+          alert (e.keyCode);
+          }*/
+        // disable right click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            //disable F12 key
+            if (e.keyCode == 123) {
+                alert("F12 Disabled by your Father");
+                return false;
+            }
+
+            //disable c key
+            if (e.ctrlKey && e.keyCode == 67) {
+                alert("CTRL + C Disabled by your Father");
+                return false;
+            }
+            //disable u key
+            if (e.ctrlKey && e.keyCode == 85) {
+                alert("CTRL + U Disabled by your Father");
+                return false;
+            }
+        }
+    </script>
+ <!-- bottom ui --->
+    <div id="home-bar">
+        <a onclick="show()">
+            <i class="fa-solid fa-gear"></i>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <a  onclick="showTerminal()">
+                <i class="fa-solid fa-terminal"></i>
+            </a>
+            <a href="#clock">
+                <i class="fa-solid fa-dragon"></i>
+            </a>
+            <a href="#calendar">
+                <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="#bell">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </ul>
+    
+    </nav>
+    <!---side nav-->
+    <div id="share-btn-container" class="share-btn-container">
+      <a href="#" class="facebook-btn">
+          <i class="fa-solid fa-ghost"></i>
+      </a>
+
+      <a href="#" class="twitter-btn">
+        <i class="fa-solid fa-fingerprint"></i>
+      </a>
+
+      <a href="#" class="pinterest-btn">
+        <i class="fa-solid fa-syringe"></i>
+      </a>
+
+      <a href="#" class="linkedin-btn">
+        <i class="fa-solid fa-bug"></i>
+      </a>
+
+      <a href="#" class="whatsapp-btn">
+        <i class="fa-solid fa-folder"></i>
+      </a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
