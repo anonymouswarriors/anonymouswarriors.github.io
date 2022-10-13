@@ -1,5 +1,357 @@
-<H1>Under Maintenance</H1>
-<a href="/v2">V2</a>
-<a href="/login">login</a>
 
-<a href="/box">box</a>
+<html>
+
+<head>
+    <title>Error 503</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #000;
+            background-size: auto, cover;
+            /*    background-image: url(media/noise.d0dfc665.png),linear-gradient(to right bottom,#000,#070406,#0c090e,#0e0e14,#0e1319,#131d24,#17272e,#1a3238,#25474c,#325d5f,#417471,#548c81);*/
+            /*    background-image: linear-gradient(to right bottom,#000,#070406,#0c090e,#0e0e14,#0e1319,#131d24,#17272e,#1a3238,#25474c,#325d5f,#417471,#548c81);*/
+            /*    background-position: 100% 100%;*/
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: Madefor, HelveticaNeueW31, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo, ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+            /*    font-size: 32px;*/
+        }
+
+
+        .bgShapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .blurScreen {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            background: rgb(0, 0, 0);
+            background: -moz-linear-gradient(153deg, rgba(0, 0, 0, 1) 51%, rgba(2, 46, 74, 1) 100%);
+            background: -webkit-linear-gradient(153deg, rgba(0, 0, 0, 1) 51%, rgba(2, 46, 74, 1) 100%);
+            background: linear-gradient(153deg, rgba(0, 0, 0, 1) 51%, rgba(2, 46, 74, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#022e4a", GradientType=1);
+            /*     -webkit-backdrop-filter: saturate(180%) blur(500px);
+            backdrop-filter: saturate(180%) blur(500px); */
+            z-index: 1;
+        }
+
+        @supports (-webkit-backdrop-filter: saturate(180%) blur(500px)) or (backdrop-filter: saturate(180%) blur(500px)) {
+            .blurScreen {
+
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #00000000;
+                -webkit-backdrop-filter: saturate(180%) blur(500px);
+                backdrop-filter: saturate(180%) blur(500px);
+                z-index: 1;
+            }
+        }
+
+        @supports not (-webkit-backdrop-filter: saturate(180%) blur(500px)) or (backdrop-filter: saturate(180%) blur(500px)) {
+            .blurScreen {
+
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgb(0, 0, 0);
+                background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(21, 21, 74, 1) 60%, rgba(43, 84, 190, 1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(21, 21, 74, 1) 60%, rgba(43, 84, 190, 1) 100%);
+                background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(21, 21, 74, 1) 60%, rgba(43, 84, 190, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#2b54be", GradientType=1);
+                z-index: 1;
+            }
+        }
+
+        .circle1 {
+            width: 80%;
+            height: 60%;
+            position: absolute;
+            bottom: 0;
+            right: -20%;
+            /*     background: #548c81; */
+            background: #a8bff5;
+            border-radius: 50%;
+            /*    filter: blur(200px);*/
+            /*    -webkit-backdrop-filter: saturate(180%) blur(500px);
+            backdrop-filter: saturate(180%) blur(500px); */
+        }
+
+        .circle2 {
+            width: 80%;
+            height: 60%;
+            position: absolute;
+            bottom: -30%;
+            /* transform: rotate(45deg); */
+            left: -10%;
+            /*     background: #1e3e46; */
+            background: #143f61;
+            border-radius: 50%;
+        }
+
+
+
+
+        header {
+            position: relative;
+            height: auto;
+            width: 100%;
+            padding: 30px 0;
+        }
+
+        header .left {
+            float: left;
+            padding: 0 0 0 30px;
+        }
+
+        .logo {
+            display: block;
+        }
+
+        header .right {
+            float: right;
+            padding: 0 30px 0 0;
+        }
+
+        .right a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            padding-left: 30px;
+        }
+
+        .content {
+            padding: 10% 150px 0;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 56px;
+            line-height: 1.2;
+            max-width: 740px;
+            max-width: 900px;
+            max-width: 53vw;
+            margin-top: 0;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            font-size: calc(2vw + 2vh + 1vmin);
+
+
+            /*
+    margin-bottom: 25px;
+    font-size: 56px;
+    line-height: 1.2;
+    max-width: 740px;
+    max-width: 900px;
+    max-width: 55vw;
+    margin-top: 0;
+    transition: 0.5s;
+    font-size: calc(3vw);
+*/
+        }
+
+        #errorType {
+            font-size: 24px;
+            color: hsla(0, 0%, 100%, .5);
+            font-weight: 400;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            margin: 0 0 25px;
+        }
+
+        h2,
+        p {
+            font-size: 24px;
+            margin: 10px 0 0;
+            font-weight: 400;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+
+        p a {
+            text-decoration: underline;
+            color: white;
+            font-weight: 600;
+        }
+
+
+
+        /*Dropdown*/
+        .dropdown {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            /* float: right; */
+            padding: 20px;
+        }
+
+        label {
+            font-size: 12px;
+        }
+
+        select {
+
+            background: rgba(255, 255, 255, 0.23137254901960785);
+            color: white;
+            padding: 10px;
+            border-radius: 3px;
+            border: 0;
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+
+
+
+
+        @media screen and (max-width: 992px) {
+            .content {
+                padding: 120px 10% 0;
+            }
+
+            h1 {
+                font-size: 32px;
+                font-size: 6vw;
+                max-width: 550px;
+                font-size: 4.5vw;
+                max-width: 90%;
+            }
+
+            #errorType {
+                font-size: 18px;
+            }
+
+            h2,
+            p {
+                font-size: 18px;
+            }
+
+            .logo svg {
+                width: 150px;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+            }
+        }
+
+
+
+
+
+        @media screen and (max-width: 667px) {
+            @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+                .blurScreen {
+
+                    background-color: red;
+                    background-size: auto, cover;
+                    background-image: url(media/noise.d0dfc665.png), linear-gradient(to right bottom, #000, #070406, #0c090e, #0e0e14, #0e1319, #131d24, #17272e, #1a3238, #25474c, #325d5f, #417471, #548c81);
+                    background-position: 100% 100%;
+                }
+            }
+
+            .blurScreen {
+                -webkit-backdrop-filter: saturate(180%) blur(150px);
+                backdrop-filter: saturate(180%) blur(150px);
+            }
+
+            .circle1 {
+                top: 0
+            }
+
+            .circle2 {
+                width: 60%;
+                height: 60%;
+                position: absolute;
+                bottom: -30%;
+                /* transform: rotate(45deg); */
+                left: -10%;
+                background: #1e3e46;
+                border-radius: 50%;
+            }
+
+            header {
+                padding: 20px 0;
+            }
+
+            header .left {
+                padding: 0 0 0 20px;
+            }
+
+            header .right {
+                display: none;
+            }
+
+            h1 {
+                font-size: 7vw;
+                max-width: none;
+            }
+
+            #errorType {
+                font-size: 16px;
+            }
+
+            h2,
+            p {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .content {
+                padding: 30% 30px;
+            }
+
+            .logo svg {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgShapes">
+        <div class="blurScreen"></div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+    <div>
+        <div class="content">
+            <h1 id="title" data-heading2973667365-appearance="H1" data-appearance="H1" data-light="true">
+            </h1>
+            <p id="errorType">(Error 403)</p>
+            <h2 id="sub" data-appearance="H2" data-light="true"></h2>
+            <p id="p"></p>
+        </div>
+        <script>
+            let errorMessages = {
+                '503': {
+                    errorType: `(Error 503)`,
+                    title: 'Just a minute, we’re fixing something&nbsp;here.',
+                    sub: 'We\'ll be right back.',
+                    p: '-anonymouswarriors.',
+                }
+            }
+            selectChange();
+            function selectChange() {
+                var value = '503'; //document.getElementById("dropdownSelect").value;
+                document.getElementById("errorType").innerHTML = errorMessages[value].errorType;
+                document.getElementById("title").innerHTML = errorMessages[value].title;
+                document.getElementById("sub").textContent = errorMessages[value].sub;
+                document.getElementById("p").innerHTML = errorMessages[value].p;
+            }
+        </script>
+</body>
+</html>
