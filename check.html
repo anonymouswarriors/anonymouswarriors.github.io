@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #de164f;
+            color: #fff;
+        }
+
+        #complaintContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            height: 100vh;
+        }
+
+        #complaintMessage {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #complaintImage {
+            
+            height: auto;
+            width: 200px;
+        }
+
+        #refreshButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .preloader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .preloader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Content styles (hide when preloader is active) */
+        #content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader-container" id="preloader">
+        <div class="preloader"></div>
+    </div>
+    <div id="complaintContainer">
+         <img id="complaintImage" src="https://i.ibb.co/KsT8hTd/sandglass-icon-set-isolated-illustration-time-counting-concept-vector-1-removebg-preview.png"><br>
+        <h2 id="complaintMessage"><i><b>Complaint is under process</b></i></h2>
+       <br><br><br><br><br><br><br>
+        <button id="refreshButton" onclick="reloadPage()"><i><b>Reload</b></i></button>
+    </div>
+    <script>
+        // Function to hide the preloader when the page is fully loaded
+        window.addEventListener("load", function () {
+            var preloader = document.getElementById("preloader");
+            var content = document.getElementById("content");
+
+            // Hide the preloader
+            preloader.style.display = "none";
+            
+            // Show the content
+            content.style.display = "block";
+        });
+    </script>
+    <script>
+        function reloadPage() {
+            document.getElementById('complaintMessage').innerText = 'Checking Status...';
+            setTimeout(function() {
+                location.reload();
+            }, 2000); // Display "Refreshing..." for 2 seconds (adjust as needed)
+        }
+    </script>
+</body>
+</html>
 
