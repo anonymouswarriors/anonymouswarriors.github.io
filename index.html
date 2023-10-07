@@ -94,22 +94,33 @@
                 <input type="email" id="emailAddress" name="emailAddress" required>
             </div>
             <div class="btn-container">
-                <button type="submit" class="btn"><b><i>Processed</i></b></button>
+                <button onclick="openCheckPage()" type="submit" class="btn" id="proceedButton" disabled><b><i>Processed</i></b></button>
             </div>
         </form>
     </div>
     <script>
-        function validateForm() {
+        // Function to check if all required fields are filled
+        function checkFields() {
             var complaintNumber = document.getElementById('complaintNumber').value;
             var phoneNumber = document.getElementById('phoneNumber').value;
             var emailAddress = document.getElementById('emailAddress').value;
 
-            if (complaintNumber === "" || phoneNumber === "" || emailAddress === "") {
-                alert("Please fill in all fields.");
-                return false;
+            if (complaintNumber !== "" && phoneNumber !== "" && emailAddress !== "") {
+                document.getElementById('proceedButton').disabled = false;
+            } else {
+                document.getElementById('proceedButton').disabled = true;
             }
-            return true;
         }
+
+        // Function to open "check.html"
+        function openCheckPage() {
+            window.location.href = "check.html";
+        }
+
+        // Add event listeners to check fields when they change
+        document.getElementById('complaintNumber').addEventListener('input', checkFields);
+        document.getElementById('phoneNumber').addEventListener('input', checkFields);
+        document.getElementById('emailAddress').addEventListener('input', checkFields);
     </script>
 </body>
 </html>
